@@ -55,7 +55,25 @@ let v=(z<=10)?"small":(z<=100)?"medium":"large";
 console.log(v);
 
 
+//Add,Sub,Multiply,Division
 
+let operation="Add";    //Add
+let num1=30;
+let num2=10;
+let num=num1+num2;
+console.log("The result is:",num);
+
+let operat="Sub";  //sub
+let n=num1-num2;
+console.log("The result is:",n)
+
+let operate="Multiply";  //multiply
+let g=num1*num2;
+console.log("The result is:",g)
+
+let opera="Divide";    //divide
+let h=num1/num2;
+console.log("The result is:",h)
 
 
 
