@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="calculator">
+        <div class="input-text">
+        <input type="text" id="display" disabled>
+    </div>
+        <div class="buttons">
+            <button id="+">+</button>
+            <button id="-">-</button>
+            <button id="*">*</button>
+            <button id="/">/</button>
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button> 
+            <button id="zero">0</button>
+            <button id="=">=</button>
+            <button id="C">C</button>
+            <button id="decimal">.</button>
+            <button id="percent">%</button>
+            <button id="backspace"><-</button>
+            <button id="mode">M</button>
+            
+        </div>
+    </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('button');
+        const calc=document.querySelector('.calculator')
+
+let num1 = '';
+let operator = '';
+let num2 = '';
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const value = button.textContent;
+ 
+        
+        if(value==='M'){
+            calc.classList.toggle('calculator-white')
+            display.classList.toggle('input-white')
+            buttons.forEach(btn=>{
+                btn.classList.toggle('button-white')
+            })
+            return
+        }
+
+        if (value === 'C') {
+            num1 = '';
+            operator = '';
+            num2 = '';
+            display.value = '';
+        } else if (value === '<-') 
+            display.value = display.value.slice(0, -1);
+        else if(value==='='){
+            const result=eval(display.value)
+            display.value=result
+        }
+        // } else if (value === '=' ) {
+        //     if (num1 !== '' && operator !== '' && num2 !== '') {
+        //         const result = eval(`${num1} ${operator} ${num2}`);
+        //         display.value = result;
+        //         num1 = result.toString();
+        //         operator = '';
+        //         num2 = '';
+        //     }
+        // } else if (['+', '-', '*', '/'].includes(value)) {
+        //     num1 = display.value;
+        //     operator = value;
+        //     num2 = '';
+        //     display.value = '';
+        // } 
+        else {
+            display.value += value;
+            num2 += value;
+        }
+    });
+});
+    </script>
+</body>
+</html>
+
+
+
+
+
