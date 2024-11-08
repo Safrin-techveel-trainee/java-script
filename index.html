@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+        <div class="form">
+            <div class="group"> 
+                <label for="name">Name</label><br>
+                <input id="name" type="text" name="name" required><br><br>
+                <div id="name-error"></div>
+            </div>
+            <div class="group">
+                <label for="email">Email</label><br>
+                <input id="email" type="email" name="Email" required><br><br>
+                <div id="email-error"></div>
+            </div>
+            <div class="group">
+                <label for="telephone">PhoneNumber</label><br>
+                <input id="telephone" type="number" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="10" required><br><br>
+                <div id="telephone-error"></div>
+            </div>
+            <div class="group">
+                <label for="address">Address</label><br>
+		        <textarea name="address" id="address"></textarea>
+                <div id="address-error"></div>
+            </div>
+            <div class="group">
+                <label for="city">City</label><br>
+                <input id="city" type="text" name="city" required><br><br>
+                <div id="city-error"></div>
+            </div>
+            <div class="group">
+                <label for="state">State</label><br>
+                <input id="state" type="text" name="state" required>
+                <div id="state-error"></div>
+            </div>
+            <div class="group">
+                <label for="pincode">Pincode</label><br>
+                <input id="pincode" type="number" name="pincode" maxlength="6" pattern="[0-9]{6}" required><br><br>
+                <div id="pincode-error"></div>
+            </div>
+            <div class="btn">
+                <input type="button" id="btn1" value="SAVE" />
+                <input type="button" id="btn2" value="CLEAR" />
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="index.js"></script>        
+</body>
+</html>
+
+
+
